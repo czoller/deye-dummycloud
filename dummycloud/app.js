@@ -1,13 +1,13 @@
 const DummyCloud = require("./src/DummyCloud");
 const Logger = require("./src/Logger");
-const MqttClient = require("./src/MqttClient");
+const HttpServer = require("./src/HttpServer");
 
 if (process.env.LOGLEVEL) {
     Logger.setLogLevel(process.env.LOGLEVEL);
 }
 
 const dummyCloud = new DummyCloud();
-const mqttClient = new MqttClient(dummyCloud);
+const httpServer = new HttpServer(dummyCloud);
 
 dummyCloud.initialize();
-mqttClient.initialize();
+httpServer.initialize();
