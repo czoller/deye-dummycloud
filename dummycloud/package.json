@@ -5,14 +5,13 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-
     "lint": "eslint -c .automated.eslintrc.json .",
     "lint_fix": "eslint -c .automated.eslintrc.json . --fix"
   },
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "mqtt": "^4.3.7"
+    "mqtt": "^4.3.8"
   },
   "devDependencies": {
     "eslint": "8.16.0",
