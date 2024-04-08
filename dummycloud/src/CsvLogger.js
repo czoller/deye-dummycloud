@@ -15,7 +15,7 @@ class CsvLogger {
     }
 
     handleData(data) {
-        const line = `${Date.now()};${this.pv(data.pv['1'])};${this.pv(data.pv['2'])};${this.pv(data.pv['3'])};${this.pv(data.pv['4'])};${this.grid(data.grid)};${this.inverter(data.inverter)};${this.inverter_meta(data.inverter_meta)}\n`;
+        const line = `${new Date().toISOString()};${this.pv(data.pv['1'])};${this.pv(data.pv['2'])};${this.pv(data.pv['3'])};${this.pv(data.pv['4'])};${this.grid(data.grid)};${this.inverter(data.inverter)};${this.inverter_meta(data.inverter_meta)}\n`;
         Logger.trace(line);
         fs.appendFile(CSV_FILE, line, err => {
             if (err) {
@@ -37,7 +37,12 @@ class CsvLogger {
     }
 
     inverter_meta(meta) {
-        return `${meta.rated_power_w};${meta.mppt_count};${meta.startup_self_check_time};${meta.current_time};${meta.grid_freq_hz_overfreq_load_reduction_starting_point};${meta.grid_overfreq_load_reduction_percent};${meta.grid_v_limit_upper};${meta.grid_v_limit_lower};${meta.grid_freq_hz_limit_upper};${meta.grid_freq_hz_limit_lower};${meta.protocol_ver};${meta.dc_master_fw_ver};${meta.ac_fw_ver}`;
+        var current_time = meta.current_time;
+        try {
+            current_time = current_time.toISOString();
+        }
+        catch (e) {}
+        return `${meta.rated_power_w};${meta.mppt_count};${meta.startup_self_check_time};${current_time};${meta.grid_freq_hz_overfreq_load_reduction_starting_point};${meta.grid_overfreq_load_reduction_percent};${meta.grid_v_limit_upper};${meta.grid_v_limit_lower};${meta.grid_freq_hz_limit_upper};${meta.grid_freq_hz_limit_lower};${meta.protocol_ver};${meta.dc_master_fw_ver};${meta.ac_fw_ver}`;
     }
 }
 module.exports = CsvLogger;
