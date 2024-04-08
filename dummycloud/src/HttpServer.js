@@ -27,7 +27,12 @@ class HttpServer {
     }
 
     handleData(data) {
-        this.data = data;
+        try {
+            //Nur wenn gültiges Datum enthalten ist, scheint das Datenpaket valide zu sein
+            data.inverter_meta.current_time.toISOString();
+            this.data = data;
+        }
+        catch (e) {}
     }
 }
 module.exports = HttpServer;
