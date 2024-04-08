@@ -2,7 +2,7 @@ const util = require("util");
 
 class Logger {
     constructor() {
-        this.logLevel = Logger.LogLevels["info"];
+        this.logLevel = Logger.LogLevels["trace"];
     }
 
     /**

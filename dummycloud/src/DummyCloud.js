@@ -4,9 +4,11 @@ const net = require("net");
 const Protocol = require("./Protocol");
 
 class DummyCloud {
-    constructor() {
+    constructor(httpServer, csvLogger) {
         this.eventEmitter = new EventEmitter();
         this.server = new net.Server();
+        this.httpServer = httpServer;
+        this.csvLogger = csvLogger;
     }
 
     initialize() {
@@ -60,6 +62,8 @@ class DummyCloud {
                             header: packet.header,
                             payload: data
                         });
+                        this.httpServer.handleData(data);
+                        this.csvLogger.handleData(data);
 
                         response = Protocol.buildTimeResponse(packet);
                         break;
@@ -95,9 +99,11 @@ class DummyCloud {
 
     emitData(data) {
         this.eventEmitter.emit(DummyCloud.PACKET_EVENTS.Data, data);
+        Logger.debug("Data event emitted.");
     }
 
     onData(listener) {
+        Logger.debug("Data listener registered: ", listener);
         this.eventEmitter.on(DummyCloud.PACKET_EVENTS.Data, listener);
     }
 
