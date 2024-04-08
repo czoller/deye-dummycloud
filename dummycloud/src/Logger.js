@@ -2,7 +2,28 @@ const util = require("util");
 
 class Logger {
     constructor() {
-        this.logLevel = Logger.LogLevels["trace"];
+        if (process.env.LOG_LEVEL && Logger.LogLevels[process.env.LOG_LEVEL]) {
+            this.logLevel = Logger.LogLevels[process.env.LOG_LEVEL];
+        }
+        else {
+            this.logLevel = Logger.LogLevels["trace"];
+        }
+    }
+
+    isTrace() {
+        return this.logLevel.level <= -2;
+    }
+
+    isDebug() {
+        return this.logLevel.level <= -1;
+    }
+
+    isInfo() {
+        return this.logLevel.level <= 0;
+    }
+
+    isWarn() {
+        return this.logLevel.level <= 1;
     }
 
     /**
