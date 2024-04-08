@@ -1,14 +1,11 @@
-const EventEmitter = require("events").EventEmitter;
 const Logger = require("./Logger");
 const net = require("net");
 const Protocol = require("./Protocol");
 
 class DummyCloud {
-    constructor(httpServer, csvLogger) {
-        this.eventEmitter = new EventEmitter();
+    constructor(dataSubscribers = []) {
         this.server = new net.Server();
-        this.httpServer = httpServer;
-        this.csvLogger = csvLogger;
+        this.dataSubscribers = dataSubscribers;
     }
 
     initialize() {
@@ -44,27 +41,14 @@ class DummyCloud {
                     }
                     case Protocol.MESSAGE_REQUEST_TYPES.HANDSHAKE: {
                         const data = Protocol.parseLoggerPacketPayload(packet);
-
                         Logger.debug(`Handshake packet data from ${remoteAddress}`, data);
-                        this.emitHandshake({
-                            header: packet.header,
-                            payload: data
-                        });
-
                         response = Protocol.buildTimeResponse(packet);
                         break;
                     }
                     case Protocol.MESSAGE_REQUEST_TYPES.DATA: {
                         const data = Protocol.parseDataPacketPayload(packet);
-
                         Logger.debug(`DATA packet data from ${remoteAddress}`, data);
-                        this.emitData({
-                            header: packet.header,
-                            payload: data
-                        });
-                        this.httpServer.handleData(data);
-                        this.csvLogger.handleData(data);
-
+                        this.dataSubscribers.forEach(subscr => subscr.handleData(data))
                         response = Protocol.buildTimeResponse(packet);
                         break;
                     }
@@ -96,31 +80,7 @@ class DummyCloud {
             Logger.error(`Error on dummycloud socket for ${remoteAddress}`, err);
         });
     }
-
-    emitData(data) {
-        this.eventEmitter.emit(DummyCloud.PACKET_EVENTS.Data, data);
-        Logger.debug("Data event emitted.");
-    }
-
-    onData(listener) {
-        Logger.debug("Data listener registered: ", listener);
-        this.eventEmitter.on(DummyCloud.PACKET_EVENTS.Data, listener);
-    }
-
-    emitHandshake(data) {
-        this.eventEmitter.emit(DummyCloud.PACKET_EVENTS.Handshake, data);
-    }
-
-    onHandshake(listener) {
-        this.eventEmitter.on(DummyCloud.PACKET_EVENTS.Handshake, listener);
-    }
 }
-
-DummyCloud.PACKET_EVENTS = {
-    Data: "Data",
-    Handshake: "Handshake"
-};
-
 
 DummyCloud.PORT = 10000;
 

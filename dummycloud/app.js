@@ -8,9 +8,16 @@ if (process.env.LOGLEVEL) {
 }
 
 const httpServer = new HttpServer();
-const csvLogger = new CsvLogger();
-const dummyCloud = new DummyCloud(httpServer, csvLogger);
-
 httpServer.initialize();
-csvLogger.initialize();
+const dataSubscribers = [httpServer];
+
+if (process.env.LOG_DATA === true || Logger.isTrace()) {
+    const csvLogger = new CsvLogger();
+    csvLogger.initialize();
+    dataSubscribers.push(csvLogger);
+}
+
+
+const dummyCloud = new DummyCloud(dataSubscribers);
 dummyCloud.initialize();
+
