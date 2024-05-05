@@ -1,7 +1,7 @@
-const DummyCloud = require("./src/DummyCloud");
-const Logger = require("./src/Logger");
-const HttpServer = require("./src/HttpServer");
 const CsvLogger = require("./src/CsvLogger");
+const DummyCloud = require("./src/DummyCloud");
+const HttpServer = require("./src/HttpServer");
+const Logger = require("./src/Logger");
 
 if (process.env.LOGLEVEL) {
     Logger.setLogLevel(process.env.LOGLEVEL);

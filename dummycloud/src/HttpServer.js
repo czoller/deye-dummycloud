@@ -4,10 +4,7 @@ const Logger = require("./Logger");
 const DEFAULT_PORT = 10100;
 
 class HttpServer {
-    /**
-     * 
-     * @param {import("./DummyCloud")} dummyCloud
-     */
+
     constructor() {
         this.data = null;
     }
@@ -31,8 +28,7 @@ class HttpServer {
             //Nur wenn gültiges Datum enthalten ist, scheint das Datenpaket valide zu sein
             data.inverter_meta.current_time.toISOString();
             this.data = data;
-        }
-        catch (e) {}
+        } catch {}
     }
 }
 module.exports = HttpServer;

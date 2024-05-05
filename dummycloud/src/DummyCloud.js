@@ -50,7 +50,9 @@ class DummyCloud {
 
                         if (data) {
                             Logger.debug(`DATA packet data from ${remoteAddress}`, data);
-                            this.dataSubscribers.forEach(subscr => subscr.handleData(data));
+                            this.dataSubscribers.forEach(subscr => {
+                                return subscr.handleData(data);
+                            });
                         } else {
                             Logger.debug("Discarded data packet");
                         }
