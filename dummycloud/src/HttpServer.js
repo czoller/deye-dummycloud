@@ -2,6 +2,7 @@ const http = require("http");
 const Logger = require("./Logger");
 
 const DEFAULT_PORT = 10100;
+const MAX_AGE = 11 * 60 * 1000; // 11 Minuten in Millisekunden
 
 class HttpServer {
 
@@ -16,10 +17,7 @@ class HttpServer {
         }
 
         const self = this;
-        http.createServer(function (req, res) {
-            res.write(JSON.stringify(self.data, false, 2)); //write a response to the client
-            res.end(); //end the response
-        }).listen(port); //the server object listens on port 8080
+        http.createServer(this.handleRequest).listen(port);
         Logger.info(`Started HTTP server on port ${port}.`);
     }
 
@@ -30,5 +28,13 @@ class HttpServer {
             this.data = data;
         } catch {}
     }
+
+    handleRequest(req, res) {
+        if (this.data != null && Date.now() - this.data.current_time.getTime() > MAX_AGE) {
+            this.data = null;
+        }
+        res.write(JSON.stringify(this.data, false, 2));
+        res.end();
+    } 
 }
 module.exports = HttpServer;
