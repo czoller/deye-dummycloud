@@ -30,9 +30,9 @@ class HttpServer {
     }
 
     handleRequest(req, res) {
-        // if (this.data != null && Date.now() - this.data.current_time.getTime() > MAX_AGE) {
-        //     this.data = null;
-        // }
+        if (this.data != null && Date.now() - this.data.inverter_meta.current_time.getTime() > MAX_AGE) {
+             this.data = null;
+        }
         Logger.debug("HTTP Response:", this.data);
         res.write(JSON.stringify(this.data, false, 2));
         res.end();
