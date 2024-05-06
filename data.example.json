@@ -1,0 +1,385 @@
+[2024-04-08T11:52:03.263Z] [DEBUG] DATA packet data from ::ffff:192.168.179.10 {
+  pv: {
+    '1': { v: 32.5, i: 2.6, w: 84.5, kWh_today: 0, kWh_total: 80.3 },
+    '2': { v: 31.6, i: 2.9, w: 91.64, kWh_today: 0, kWh_total: 87.6 },
+    '3': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 },
+    '4': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 }
+  },
+  grid: {
+    active_power_w: 181,
+    kWh_today: 0,
+    kWh_total: 176.6,
+    v: 235,
+    i: 0.7,
+    hz: 50.1
+  },
+  inverter: { radiator_temp_celsius: 37.9 },
+  inverter_meta: {
+    rated_power_w: 800,
+    mppt_count: 2,
+    startup_self_check_time: 60,
+    current_time: 2024-04-08T11:46:59.000Z,
+    grid_freq_hz_overfreq_load_reduction_starting_point: 50.2,
+    grid_overfreq_load_reduction_percent: 44,
+    grid_v_limit_upper: 275,
+    grid_v_limit_lower: 183,
+    grid_freq_hz_limit_upper: 51.5,
+    grid_freq_hz_limit_lower: 47.5,
+    protocol_ver: 'V0.2.0.1',
+    dc_master_fw_ver: 'V0.1.1.7',
+    ac_fw_ver: 'V1.2.1.8'
+  }
+}
+[2024-04-08T11:52:03.466Z] [DEBUG] DATA packet data from ::ffff:192.168.179.10 {
+  pv: {
+    '1': { v: 31.9, i: 5.5, w: 175.45, kWh_today: 1.6, kWh_total: 80 },
+    '2': { v: 31.1, i: 6, w: 186.6, kWh_today: 1.7, kWh_total: 87.3 },
+    '3': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 },
+    '4': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 }
+  },
+  grid: {
+    active_power_w: 363,
+    kWh_today: 3.4,
+    kWh_total: 175.9,
+    v: 238,
+    i: 1.5,
+    hz: 50
+  },
+  inverter: { radiator_temp_celsius: 37 },
+  inverter_meta: {
+    rated_power_w: 800,
+    mppt_count: 2,
+    startup_self_check_time: 60,
+    current_time: Invalid Date,
+    grid_freq_hz_overfreq_load_reduction_starting_point: 50.2,
+    grid_overfreq_load_reduction_percent: 44,
+    grid_v_limit_upper: 275,
+    grid_v_limit_lower: 183,
+    grid_freq_hz_limit_upper: 51.5,
+    grid_freq_hz_limit_lower: 47.5,
+    protocol_ver: 'V0.2.0.1',
+    dc_master_fw_ver: 'V0.1.1.7',
+    ac_fw_ver: 'V1.2.1.8'
+  }
+}
+[2024-04-08T11:52:03.540Z] [DEBUG] DATA packet data from ::ffff:192.168.179.10 {
+  pv: {
+    '1': { v: 31.8, i: 5.7, w: 181.26, kWh_today: 1.6, kWh_total: 80 },
+    '2': { v: 31.6, i: 6.1, w: 192.76, kWh_today: 1.7, kWh_total: 87.3 },
+    '3': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 },
+    '4': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 }
+  },
+  grid: {
+    active_power_w: 376,
+    kWh_today: 3.4,
+    kWh_total: 175.9,
+    v: 239,
+    i: 1.5,
+    hz: 50.1
+  },
+  inverter: { radiator_temp_celsius: 35.7 },
+  inverter_meta: {
+    rated_power_w: 800,
+    mppt_count: 2,
+    startup_self_check_time: 60,
+    current_time: Invalid Date,
+    grid_freq_hz_overfreq_load_reduction_starting_point: 50.2,
+    grid_overfreq_load_reduction_percent: 44,
+    grid_v_limit_upper: 275,
+    grid_v_limit_lower: 183,
+    grid_freq_hz_limit_upper: 51.5,
+    grid_freq_hz_limit_lower: 47.5,
+    protocol_ver: 'V0.2.0.1',
+    dc_master_fw_ver: 'V0.1.1.7',
+    ac_fw_ver: 'V1.2.1.8'
+  }
+}
+[2024-04-08T11:52:03.614Z] [DEBUG] DATA packet data from ::ffff:192.168.179.10 {
+  pv: {
+    '1': { v: 32.8, i: 6.3, w: 206.64, kWh_today: 1.5, kWh_total: 79.9 },
+    '2': { v: 32.2, i: 6.8, w: 218.96, kWh_today: 1.7, kWh_total: 87.3 },
+    '3': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 },
+    '4': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 }
+  },
+  grid: {
+    active_power_w: 431,
+    kWh_today: 3.4,
+    kWh_total: 175.9,
+    v: 238,
+    i: 1.8,
+    hz: 50
+  },
+  inverter: { radiator_temp_celsius: 35.8 },
+  inverter_meta: {
+    rated_power_w: 800,
+    mppt_count: 2,
+    startup_self_check_time: 60,
+    current_time: Invalid Date,
+    grid_freq_hz_overfreq_load_reduction_starting_point: 50.2,
+    grid_overfreq_load_reduction_percent: 44,
+    grid_v_limit_upper: 275,
+    grid_v_limit_lower: 183,
+    grid_freq_hz_limit_upper: 51.5,
+    grid_freq_hz_limit_lower: 47.5,
+    protocol_ver: 'V0.2.0.1',
+    dc_master_fw_ver: 'V0.1.1.7',
+    ac_fw_ver: 'V1.2.1.8'
+  }
+}
+[2024-04-08T11:52:03.693Z] [DEBUG] DATA packet data from ::ffff:192.168.179.10 {
+  pv: {
+    '1': { v: 31.3, i: 6.8, w: 212.84, kWh_today: 1.5, kWh_total: 79.9 },
+    '2': { v: 31.6, i: 7.1, w: 224.36, kWh_today: 1.7, kWh_total: 87.3 },
+    '3': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 },
+    '4': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 }
+  },
+  grid: {
+    active_power_w: 440,
+    kWh_today: 3.3,
+    kWh_total: 175.8,
+    v: 239,
+    i: 1.8,
+    hz: 50
+  },
+  inverter: { radiator_temp_celsius: 32.1 },
+  inverter_meta: {
+    rated_power_w: 800,
+    mppt_count: 2,
+    startup_self_check_time: 60,
+    current_time: Invalid Date,
+    grid_freq_hz_overfreq_load_reduction_starting_point: 50.2,
+    grid_overfreq_load_reduction_percent: 44,
+    grid_v_limit_upper: 275,
+    grid_v_limit_lower: 183,
+    grid_freq_hz_limit_upper: 51.5,
+    grid_freq_hz_limit_lower: 47.5,
+    protocol_ver: 'V0.2.0.1',
+    dc_master_fw_ver: 'V0.1.1.7',
+    ac_fw_ver: 'V1.2.1.8'
+  }
+}
+[2024-04-08T11:52:03.775Z] [DEBUG] DATA packet data from ::ffff:192.168.179.10 {
+  pv: {
+    '1': { v: 32.2, i: 6, w: 193.2, kWh_today: 1.5, kWh_total: 79.9 },
+    '2': { v: 32.1, i: 6.4, w: 205.44, kWh_today: 1.7, kWh_total: 87.2 },
+    '3': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 },
+    '4': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 }
+  },
+  grid: {
+    active_power_w: 404,
+    kWh_today: 3.3,
+    kWh_total: 175.8,
+    v: 240,
+    i: 1.6,
+    hz: 50.1
+  },
+  inverter: { radiator_temp_celsius: 32.1 },
+  inverter_meta: {
+    rated_power_w: 800,
+    mppt_count: 2,
+    startup_self_check_time: 60,
+    current_time: Invalid Date,
+    grid_freq_hz_overfreq_load_reduction_starting_point: 50.2,
+    grid_overfreq_load_reduction_percent: 44,
+    grid_v_limit_upper: 275,
+    grid_v_limit_lower: 183,
+    grid_freq_hz_limit_upper: 51.5,
+    grid_freq_hz_limit_lower: 47.5,
+    protocol_ver: 'V0.2.0.1',
+    dc_master_fw_ver: 'V0.1.1.7',
+    ac_fw_ver: 'V1.2.1.8'
+  }
+}
+[2024-04-08T11:52:03.848Z] [DEBUG] DATA packet data from ::ffff:192.168.179.10 {
+  pv: {
+    '1': { v: 33.3, i: 4.7, w: 156.51, kWh_today: 1.5, kWh_total: 79.9 },
+    '2': { v: 33.1, i: 5, w: 165.5, kWh_today: 1.7, kWh_total: 87.2 },
+    '3': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 },
+    '4': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 }
+  },
+  grid: {
+    active_power_w: 324,
+    kWh_today: 3.3,
+    kWh_total: 175.8,
+    v: 238,
+    i: 1.3,
+    hz: 50.1
+  },
+  inverter: { radiator_temp_celsius: 31.2 },
+  inverter_meta: {
+    rated_power_w: 800,
+    mppt_count: 2,
+    startup_self_check_time: 60,
+    current_time: Invalid Date,
+    grid_freq_hz_overfreq_load_reduction_starting_point: 50.2,
+    grid_overfreq_load_reduction_percent: 44,
+    grid_v_limit_upper: 275,
+    grid_v_limit_lower: 183,
+    grid_freq_hz_limit_upper: 51.5,
+    grid_freq_hz_limit_lower: 47.5,
+    protocol_ver: 'V0.2.0.1',
+    dc_master_fw_ver: 'V0.1.1.7',
+    ac_fw_ver: 'V1.2.1.8'
+  }
+}
+[2024-04-08T11:52:03.923Z] [DEBUG] DATA packet data from ::ffff:192.168.179.10 {
+  pv: {
+    '1': { v: 29, i: 3.7, w: 107.3, kWh_today: 1.5, kWh_total: 79.9 },
+    '2': { v: 38.3, i: 3, w: 114.9, kWh_today: 1.6, kWh_total: 87.2 },
+    '3': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 },
+    '4': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 }
+  },
+  grid: {
+    active_power_w: 226,
+    kWh_today: 3.3,
+    kWh_total: 175.7,
+    v: 235,
+    i: 0.9,
+    hz: 50.1
+  },
+  inverter: { radiator_temp_celsius: 31.9 },
+  inverter_meta: {
+    rated_power_w: 800,
+    mppt_count: 2,
+    startup_self_check_time: 60,
+    current_time: Invalid Date,
+    grid_freq_hz_overfreq_load_reduction_starting_point: 50.2,
+    grid_overfreq_load_reduction_percent: 44,
+    grid_v_limit_upper: 275,
+    grid_v_limit_lower: 183,
+    grid_freq_hz_limit_upper: 51.5,
+    grid_freq_hz_limit_lower: 47.5,
+    protocol_ver: 'V0.2.0.1',
+    dc_master_fw_ver: 'V0.1.1.7',
+    ac_fw_ver: 'V1.2.1.8'
+  }
+}
+[2024-04-08T11:52:03.998Z] [DEBUG] DATA packet data from ::ffff:192.168.179.10 {
+  pv: {
+    '1': { v: 31.9, i: 2.7, w: 86.13, kWh_today: 1.5, kWh_total: 79.9 },
+    '2': { v: 32.3, i: 3, w: 96.9, kWh_today: 1.6, kWh_total: 87.2 },
+    '3': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 },
+    '4': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 }
+  },
+  grid: {
+    active_power_w: 186,
+    kWh_today: 3.2,
+    kWh_total: 175.7,
+    v: 234,
+    i: 0.7,
+    hz: 50.1
+  },
+  inverter: { radiator_temp_celsius: 31.6 },
+  inverter_meta: {
+    rated_power_w: 800,
+    mppt_count: 2,
+    startup_self_check_time: 60,
+    current_time: Invalid Date,
+    grid_freq_hz_overfreq_load_reduction_starting_point: 50.2,
+    grid_overfreq_load_reduction_percent: 44,
+    grid_v_limit_upper: 275,
+    grid_v_limit_lower: 183,
+    grid_freq_hz_limit_upper: 51.5,
+    grid_freq_hz_limit_lower: 47.5,
+    protocol_ver: 'V0.2.0.1',
+    dc_master_fw_ver: 'V0.1.1.7',
+    ac_fw_ver: 'V1.2.1.8'
+  }
+}
+[2024-04-08T11:52:04.075Z] [DEBUG] DATA packet data from ::ffff:192.168.179.10 {
+  pv: {
+    '1': { v: 32.6, i: 2.5, w: 81.5, kWh_today: 1.5, kWh_total: 79.9 },
+    '2': { v: 32.2, i: 2.8, w: 90.16, kWh_today: 1.6, kWh_total: 87.2 },
+    '3': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 },
+    '4': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 }
+  },
+  grid: {
+    active_power_w: 177,
+    kWh_today: 3.2,
+    kWh_total: 175.7,
+    v: 235,
+    i: 0.7,
+    hz: 50
+  },
+  inverter: { radiator_temp_celsius: 31.1 },
+  inverter_meta: {
+    rated_power_w: 800,
+    mppt_count: 2,
+    startup_self_check_time: 60,
+    current_time: Invalid Date,
+    grid_freq_hz_overfreq_load_reduction_starting_point: 50.2,
+    grid_overfreq_load_reduction_percent: 44,
+    grid_v_limit_upper: 275,
+    grid_v_limit_lower: 183,
+    grid_freq_hz_limit_upper: 51.5,
+    grid_freq_hz_limit_lower: 47.5,
+    protocol_ver: 'V0.2.0.1',
+    dc_master_fw_ver: 'V0.1.1.7',
+    ac_fw_ver: 'V1.2.1.8'
+  }
+}
+[2024-04-08T11:52:04.213Z] [DEBUG] DATA packet data from ::ffff:192.168.179.10 {
+  pv: {
+    '1': { v: 32.6, i: 3.1, w: 101.06, kWh_today: 1.5, kWh_total: 79.9 },
+    '2': { v: 31.5, i: 3.5, w: 110.25, kWh_today: 1.6, kWh_total: 87.2 },
+    '3': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 },
+    '4': { v: 0, i: 0, w: 0, kWh_today: 0, kWh_total: 0 }
+  },
+  grid: {
+    active_power_w: 215,
+    kWh_today: 3.2,
+    kWh_total: 175.7,
+    v: 235,
+    i: 0.9,
+    hz: 50
+  },
+  inverter: { radiator_temp_celsius: 32.7 },
+  inverter_meta: {
+    rated_power_w: 800,
+    mppt_count: 2,
+    startup_self_check_time: 60,
+    current_time: Invalid Date,
+    grid_freq_hz_overfreq_load_reduction_starting_point: 50.2,
+    grid_overfreq_load_reduction_percent: 44,
+    grid_v_limit_upper: 275,
+    grid_v_limit_lower: 183,
+    grid_freq_hz_limit_upper: 51.5,
+    grid_freq_hz_limit_lower: 47.5,
+    protocol_ver: 'V0.2.0.1',
+    dc_master_fw_ver: 'V0.1.1.7',
+    ac_fw_ver: 'V1.2.1.8'
+  }
+}
+[2024-04-08T11:52:04.295Z] [DEBUG] DATA packet data from ::ffff:192.168.179.10 {
+  pv: {
+    '1': { v: 0, i: 0, w: 0, kWh_today: 1, kWh_total: 195.5 },
+    '2': { v: 0, i: 3339.1, w: 0, kWh_today: 1, kWh_total: 475 },
+    '3': { v: 474.3, i: 25.6, w: 12142.08, kWh_today: 1, kWh_total: 253 },
+    '4': { v: 0, i: 0, w: 0, kWh_today: 231.4, kWh_total: 2 }
+  },
+  grid: {
+    active_power_w: 0,
+    kWh_today: 0.49,
+    kWh_total: 89235128.2,
+    v: 1387.6,
+    i: 0.8,
+    hz: 0
+  },
+  inverter: { radiator_temp_celsius: 0 },
+  inverter_meta: {
+    rated_power_w: 30,
+    mppt_count: 0,
+    startup_self_check_time: 0,
+    current_time: Invalid Date,
+    grid_freq_hz_overfreq_load_reduction_starting_point: 0,
+    grid_overfreq_load_reduction_percent: 256,
+    grid_v_limit_upper: 0,
+    grid_v_limit_lower: 0,
+    grid_freq_hz_limit_upper: 0,
+    grid_freq_hz_limit_lower: 0,
+    protocol_ver: '\x00\x02\x00\x00\x00\x02\x0B;',
+    dc_master_fw_ver: '\x0B;\x07&\x04\x0B\x04\x0B',
+    ac_fw_ver: '\x14\x1E\x14\x1E\x12\x0E\x12\x0E'
+  }
+}
+
