@@ -1,0 +1,77 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Publish
+
+on:
+  push:
+    tags: [ "latest" ]
+    
+env:    
+  REGISTRY: ghcr.io
+  IMAGE_NAME: deye-dummycloud
+
+jobs:
+  build-and-push:
+    name: Build+Push Container Image
+
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      packages: write    
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up JDK 17
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Get App Version
+      run: echo "VERSION=$( npm run --silent version )" >> $GITHUB_ENV
+         
+    - name: Build Docker Image
+      run: npm run build
+      
+    - name: Log into the Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}      
+      
+    - name: Push Image
+      run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+      run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+      
+  tag:
+    name: Create Version Tag in git
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Get App Version
+      run: echo "VERSION=$( npm run --silent version )" >> $GITHUB_ENV
+    
+    - name: Create Version Tag in git
+      uses: actions/github-script@v7
+      with:
+        script: |
+          github.rest.git.createRef({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            ref: 'refs/tags/v${{ env.VERSION }}',
+            sha: context.sha
+          })

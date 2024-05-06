@@ -7,7 +7,8 @@
     "start": "node app.js",
     "lint": "eslint -c .automated.eslintrc.json .",
     "lint_fix": "eslint -c .automated.eslintrc.json . --fix",
-    "build": "docker build -t ghcr.io/czoller/deye-dummycloud:$npm_package_version -t ghcr.io/czoller/deye-dummycloud:latest . "
+    "build": "docker build -t ghcr.io/czoller/deye-dummycloud:$npm_package_version -t ghcr.io/czoller/deye-dummycloud:latest . ",
+    "version": "echo $npm_package_version"
   },
   "author": "",
   "license": "Apache-2.0",
