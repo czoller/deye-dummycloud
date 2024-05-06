@@ -49,6 +49,8 @@ jobs:
       
     - name: Push Image
       run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+
+    - name: Push latest tag  
       run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
       
   tag:
