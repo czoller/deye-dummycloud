@@ -34,6 +34,7 @@ class HttpServer {
              this.data = null;
         }
         Logger.debug("HTTP Response:", this.data);
+        res.setHeader('Content-Type', 'application/json'); 
         res.write(JSON.stringify(this.data, false, 2));
         res.end();
     } 
